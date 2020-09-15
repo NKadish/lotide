@@ -27,19 +27,19 @@ const assertArraysEqual = function (arrayOne, arrayTwo) {
 
 // first the without function that will take a source array and an array with things we want to remove 
 const without = function (source, itemsToRemove) {
-  let withoutArray = []; //accumulator array 
+  let modifiedArray = source; //copying the source array to change it and return it
   for (let x = 0; x < source.length; x++) {
     for (let y = 0; y < itemsToRemove.length; y++){
-      console.log(source[x], itemsToRemove[y]);
-      if (source[x] !== itemsToRemove[y]) {
-        withoutArray.push(source[x]);
+      if (source[x] === itemsToRemove[y]) {
+        modifiedArray.splice(x, 1); //removing the specific element from the array once we find a match
       }
     }
   }
-  return withoutArray; 
+  return modifiedArray; 
 };
 
 const words = ["hello", "world", "lighthouse"];
 without(words, ["lighthouse"]); // no need to capture return value for this test case
 // Make sure the original array was not altered by the without function
 assertArraysEqual(words, ["hello", "world", "lighthouse"]);
+console.log(without([1, 2, 3, 4, 5, 6, 7, 8, 9], [9, 3, 6]));
