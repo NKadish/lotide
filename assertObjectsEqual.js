@@ -43,16 +43,14 @@ const eqObjects = function(object1, object2) {
   }
 };
 
-const ab = { a: "1", b: "2" };
-const ba = { b: "2", a: "1" };
-console.log(assertEqual(eqObjects(ab, ba), true)); // => true
+const assertObjectsEqual = function(actual, expected) {
+  let output = eqObjects(actual, expected);
+  const inspect = require('util').inspect; //workaround to fix objects not showing up in the console log. Show up as like [object]
+  if (output === true) {
+    console.log(`Hey sick dude ${inspect(actual)} is the same as ${inspect(expected)}!`);
+  } else {
+    console.log(`Sorry my guy ${inspect(actual)} is not the same as ${inspect(expected)}.`);
+  }
+};
 
-const abc = { a: "1", b: "2", c: "3" };
-console.log(assertEqual(eqObjects(ab, abc), false)); // => false
-
-const cd = { c: "1", d: ["2", 3] };
-const dc = { d: ["2", 3], c: "1" };
-console.log(assertEqual(eqObjects(cd, dc), true)); // => true
-
-const cd2 = { c: "1", d: ["2", 3, 4, 5] };
-console.log(assertEqual(eqObjects(cd, cd2), false)); // => false
+assertObjectsEqual({ a: "1", b: "2" }, { b: "2", a: "1" , c: '3'});
