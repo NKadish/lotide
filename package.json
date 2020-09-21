@@ -1,7 +1,7 @@
 {
-  "name": "lotide",
+  "name": "@nkadish/lotide",
   "version": "1.0.0",
-  "description": "",
+  "description": "A mini clone of lodash that I made as a learning opportunity through my Lighthouse Labs bootcamp ",
   "main": "assertArraysEqual.js",
   "directories": {
 
@@ -13,7 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/NKadish/lotide.git"
   },
-  "author": "",
+  "author": "Noah Kadish",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/NKadish/lotide/issues"
