@@ -50,3 +50,4 @@ const data3 = [1, 'one', 2, 'two', 3, 'three', 4, 'four', 5, 'five'];
 const results3 = takeUntil(data3, x => x === 4);
 assertArraysEqual(results3, [1, 'one', 2, 'two', 3, 'three' ]);
 
+module.exports = takeUntil;

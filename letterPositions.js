@@ -41,6 +41,8 @@ const letterPositions = function(sentence) {
 
 console.log(letterPositions("lighthouse in the house"));
 
+module.exports = letterPositions;
+
 /*
 Tried this but it didn't work. I think I know why. Because there is no real counter in there. It has trouble. Need a for loop for the counter.
 for (const letters of sentence) {
